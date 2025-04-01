@@ -1,22 +1,38 @@
-.CINNAMOROLL{
-    width: 10px;
-    left: 10px;
+:root {
+    --bg-light: #abd4ec;
+    --bg-dark: #1b1b2f;
+    --calculator-light: #fff;
+    --calculator-dark: #232946;
+    --text-light: #000;
+    --text-dark: #fff;
+    --button-bg: #f4f4f4;
+    --button-hover: #ddd;
+    --operator-bg: #3f7ad3;
+    --operator-hover: #0d33b1;
+    --equal-bg: #84d0f3;
+    --equal-hover: #45b7da;
 }
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #abd4ec;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+
+body[data-theme="light"] {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+}
+
+body[data-theme="dark"] {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
 }
 
 .calculator {
-    background-color: #fff;
+    background-color: var(--calculator-light);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease-in-out;
+}
+
+body[data-theme="dark"] .calculator {
+    background-color: var(--calculator-dark);
 }
 
 #display {
@@ -41,27 +57,27 @@ body {
     font-size: 20px;
     padding: 20px;
     border: none;
-    background-color: #f4f4f4;
+    background-color: var(--button-bg);
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .button:hover {
-    background-color: #ddd;
+    background-color: var(--button-hover);
 }
 
 .operator {
-    background-color: #3f7ad3;
+    background-color: var(--operator-bg);
     color: white;
 }
 
 .operator:hover {
-    background-color: #0d33b1;
+    background-color: var(--operator-hover);
 }
 
 .equal {
-    background-color: #84d0f3;
+    background-color: var(--equal-bg);
     color: white;
     grid-column: span 5;
     padding-right: 30px;
@@ -69,9 +85,25 @@ body {
 }
 
 .equal:hover {
-    background-color: #45b7da;
+    background-color: var(--equal-hover);
 }
 
 button:active {
     transform: scale(0.95);
+}
+
+#theme-toggle {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ff914d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+#theme-toggle:hover {
+    background-color: #ff6f3c;
 }
