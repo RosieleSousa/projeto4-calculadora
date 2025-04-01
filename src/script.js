@@ -21,16 +21,3 @@ function calculate() {
     }
 }
 
-const themeToggleButton = document.getElementById("theme-toggle");
-themeToggleButton.addEventListener("click", function () {
-    const body = document.body;
-    const currentTheme = body.getAttribute("data-theme");
-
-    if (currentTheme === "light") {
-        body.setAttribute("data-theme", "dark");
-        themeToggleButton.textContent = "☀️ Alternar Tema";
-    } else {
-        body.setAttribute("data-theme", "light");
-        themeToggleButton.textContent = "🌙 Alternar Tema";
-    }
-});
